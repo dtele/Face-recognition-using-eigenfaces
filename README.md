@@ -1,22 +1,24 @@
 # Face recognition using Eigenfaces
 
 ## Abstract
-This project focused on the methodology of Turk and Pentland¡¯s paper, Face recognition using eigenfaces. We implemented the workflow suing basic algebra function of Numpy, including images preprocessing, eigenfaces construction, eigenspace representation of images, face recognition based on K-nn (K near neighbors) algorithm, performance evaluation. For performance evaluation, we worked on the ATT face dataset (formerly 'The ORL Database of Faces').
+This project was based on Turk and Pentland's research paper, "Face Recognition using Eigenfaces." We followed their methodology and implemented it by utilizing basic algebra functions from the Numpy library. The project involved several steps, including image preprocessing, construction of eigenfaces, representing images in the eigenspace, face recognition using the K-nearest neighbors (KNN) algorithm, and evaluating the performance of the system.
 
-## Datasets:
+To evaluate the performance, we used the ATT face dataset, previously known as "The ORL Database of Faces".
+
+## Dataset:
 ### AT&T "The Database of Faces" (formerly "The ORL Database of Faces")
 Ten different images of each of 40 distinct subjects. The images were taken at different times, varying the lighting, facial expressions (open / closed eyes, smiling / not smiling) and facial details (glasses / no glasses). All the images were taken against a dark homogeneous background with the subjects in an upright, frontal position (with tolerance for some side movement)
 
 ### Methodology, Workflow and Result
 1.	Load images and convert every of them into a Numpy matrix xi;
-2.	Compute the mean ?:  
+2.	Compute the mean:  
 
 Figure 1 Mean image  
 ![Figure 1 AT&T database mean image](/result/att_mean_image.png?raw=true "AT&T database mean image")
 
 3.	Compute the normalized images:
 
-4.	Compute the ¡°Covariance Matrix¡± S, which is different from the covariance matrix, in order to avoid huge matrix for eigen decomposition problem:
+4.	Compute the ¡°Covariance Matrix¡± S, which is a modified version of the covariance matrix designed to mitigate issues related to large matrices during eigen decomposition:
 
 5.	Compute the eigenvalue and eigenvector
 
@@ -43,10 +45,13 @@ Figure 10 Reconstruct using 99% variance
 ![result](/result/att_var099_faces324.png?raw=true)
 
 7.	Recognition
-For an image, we projected it into the eigenspace, and the image was considered as the linear combination of the eigenfaces. The weights of the corresponding eigenfaces therefore represented the image. We only used the top n eigenfaces to represent an image, where the n was determined by how much variance this sub-eigenspace can represent. We investigated 99%, 95%, 90% and 80% percent of variance for both datasets the n were 324, 189, 180 and 43, respectively.
-To recognize an unknown face, we used the Knn algorithm to find the close subject in the database. For each image in a dataset, we considered it as a query image and the other images in the dataset as training data. We got the nearest K neighbors and let them vote to determine the label of the query image. Whenever there was a tie, we used the label with the least average distance.  
-If the predict label is the same with the ground label, it is a true positive; otherwise, it is a false positive. We calculated the precision as the performance of the recognition of the result.  
-We also investigated different k in Knn algorithm (k from 1 to 10).
+In this image recognition approach, we used a technique called eigenface projection. By projecting an image onto a set of eigenfaces, we represented the image as a combination of these eigenfaces. The weights associated with the eigenfaces represented the image itself. To reduce the dimensionality, we only considered the top n eigenfaces, determined by the amount of variance they can capture. We examined four variance thresholds: 99%, 95%, 90%, and 80%. For the two datasets, the corresponding values of n were 324, 189, 180, and 43, respectively.
+
+To recognize an unknown face, we employed the K-nearest neighbors (KNN) algorithm. We treated each image in the dataset as a query image and used the remaining images as training data. By finding the K nearest neighbors, we allowed them to vote and determine the label for the query image. In case of a tie, we chose the label with the least average distance.
+
+To evaluate the performance of the recognition system, we assessed the precision, which was calculated based on the predicted label and the ground truth label. If the predicted label matched the ground truth label, it was considered a true positive; otherwise, it was a false positive.
+
+Furthermore, we explored different values of k in the KNN algorithm, ranging from 1 to 10, to analyze its impact on the recognition accuracy.
 
 Figure 15 Precisions for different k neighbors and n percent of variances
 ![result](/result/att_precision.png?raw=true)
