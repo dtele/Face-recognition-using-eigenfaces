@@ -22,26 +22,26 @@ Figure 1 Mean image
 
 5.	Compute the eigenvalue and eigenvector
 
-Figure 3 Percentage of variance for each eigenvector
+Figure 2 Percentage of variance for each eigenvector
 ![result](/result/att_variance_distribution.png?raw=true)
 
-Figure 5 Top 16 eigenfaces
+Figure 3 Top 16 eigenfaces
 ![result](/result/att_top_16_eigenfaces.png?raw=true)
 
 6.	Project an image into eigenspace and reconstruct using K eigenfaces:
 W = vTXi  
 Xf = V W  
 
-Figure 7 Reconstruct using 80% variance
+Figure 4 Reconstruct using 80% variance
 ![result](/result/att_var080_faces43.png?raw=true)
 
-Figure 8 Reconstruct using 90% variance
+Figure 5 Reconstruct using 90% variance
 ![result](/result/att_var090_faces110.png?raw=true)
 
-Figure 9 Reconstruct using 95% variance
+Figure 6 Reconstruct using 95% variance
 ![result](/result/att_var095_faces189.png?raw=true)
 
-Figure 10 Reconstruct using 99% variance
+Figure 7 Reconstruct using 99% variance
 ![result](/result/att_var099_faces324.png?raw=true)
 
 7.	Recognition
@@ -50,7 +50,7 @@ To recognize an unknown face, we employed the K-nearest neighbors (KNN) algorith
 To evaluate the performance of the recognition system, we assessed the precision, which was calculated based on the predicted label and the ground truth label. If the predicted label matched the ground truth label, it was considered a true positive; otherwise, it was a false positive.
 Furthermore, we explored different values of k in the KNN algorithm, ranging from 1 to 10, to analyze its impact on the recognition accuracy.
 
-Figure 15 Precisions for different k neighbors and n percent of variances
+Figure 8 Precisions for different k neighbors and n percent of variances
 ![result](/result/att_precision.png?raw=true)
 
 ## Reference:
