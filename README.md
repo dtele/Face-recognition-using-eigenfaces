@@ -61,4 +61,3 @@ Figure 15 Precisions for different k neighbors and n percent of variances
 * Turk, Matthew, and Alex Pentland. "Eigenfaces for recognition." Journal of cognitive neuroscience 3.1 (1991): 71-86.
 * Belhumeur, Peter N., Jo?o P. Hespanha, and David J. Kriegman. "Eigenfaces vs. fisherfaces: Recognition using class specific linear projection." IEEE Transactions on pattern analysis and machine intelligence 19.7 (1997): 711-720.
 * http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html
-* Belhumeur, Peter N., Jo?o P. Hespanha, and David J. Kriegman. "Eigenfaces vs. fisherfaces: Recognition using class specific linear projection." IEEE Transactions on pattern analysis and machine intelligence 19.7 (1997): 711-720.
