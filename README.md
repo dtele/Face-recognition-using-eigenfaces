@@ -11,7 +11,7 @@ Ten different images of each of 40 distinct subjects. The images were taken at d
 1.	Load images and convert every of them into a Numpy matrix xi;
 2.	Compute the mean ?:  
 
-Figure 1 AT&T database mean image  
+Figure 1 Mean image  
 ![Figure 1 AT&T database mean image](/result/att_mean_image.png?raw=true "AT&T database mean image")
 
 3.	Compute the normalized images:
@@ -20,26 +20,26 @@ Figure 1 AT&T database mean image
 
 5.	Compute the eigenvalue and eigenvector
 
-Figure 3 Percentage of variance for each eigenvector (AT&T database)
+Figure 3 Percentage of variance for each eigenvector
 ![result](/result/att_variance_distribution.png?raw=true)
 
-Figure 5 Top 16 eigenfaces (AT&T database)
+Figure 5 Top 16 eigenfaces
 ![result](/result/att_top_16_eigenfaces.png?raw=true)
 
 6.	Project an image into eigenspace and reconstruct using K eigenfaces:
 W = vTXi  
 Xf = V W  
 
-Figure 7 Reconstruct using 80% variance (AT&T)
+Figure 7 Reconstruct using 80% variance
 ![result](/result/att_var080_faces43.png?raw=true)
 
-Figure 8 Reconstruct using 90% variance (AT&T)
+Figure 8 Reconstruct using 90% variance
 ![result](/result/att_var090_faces110.png?raw=true)
 
-Figure 9 Reconstruct using 95% variance (AT&T)
+Figure 9 Reconstruct using 95% variance
 ![result](/result/att_var095_faces189.png?raw=true)
 
-Figure 10 Reconstruct using 99% variance (AT&T)
+Figure 10 Reconstruct using 99% variance
 ![result](/result/att_var099_faces324.png?raw=true)
 
 7.	Recognition
@@ -48,11 +48,8 @@ To recognize an unknown face, we used the Knn algorithm to find the close subjec
 If the predict label is the same with the ground label, it is a true positive; otherwise, it is a false positive. We calculated the precision as the performance of the recognition of the result.  
 We also investigated different k in Knn algorithm (k from 1 to 10).
 
-Figure 15 Precisions for different k neighbors and n percent of variances (AT&T)
+Figure 15 Precisions for different k neighbors and n percent of variances
 ![result](/result/att_precision.png?raw=true)
-
-## Discussion:
-The eigenfaces is one of the most popular approaches to represent an image, with the basic idea that the top k component eigenvectors (eigenfaces) represent as much variance as possible. This criterion need not to be meaningful. It is also susceptible to illumination and background around the face. Fisherfaces [6] is considered to be a better representation than eigenfaces since it is more robust to illumination. But both of them do not contain semantic meanings as human to understand a face image. A possible further study is the deep neural network approach that produce the state of the art performance by now.
 
 ## Reference:
 * Turk, Matthew A., and Alex P. Pentland. "Face recognition using eigenfaces." Computer Vision and Pattern Recognition, 1991. Proceedings CVPR'91., IEEE Computer Society Conference on. IEEE, 1991.
