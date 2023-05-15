@@ -1,7 +1,7 @@
 # Face recognition using Eigenfaces
 
 ## Abstract
-This project focused on the methodology of Turk and Pentland¡¯s paper, Face recognition using eigenfaces. We implemented the workflow suing basic algebra function of Numpy, including images preprocessing, eigenfaces construction, eigenspace representation of images, face recognition based on K-nn (K near neighbors) algorithm, performance evaluation. For performance evaluation, we worked on two datasets, ATT face dataset (formerly 'The ORL Database of Faces') and cropped Yale face database B (include its extension).
+This project focused on the methodology of Turk and Pentland¡¯s paper, Face recognition using eigenfaces. We implemented the workflow suing basic algebra function of Numpy, including images preprocessing, eigenfaces construction, eigenspace representation of images, face recognition based on K-nn (K near neighbors) algorithm, performance evaluation. For performance evaluation, we worked on the ATT face dataset (formerly 'The ORL Database of Faces').
 
 ## Datasets:
 ### AT&T "The Database of Faces" (formerly "The ORL Database of Faces")
@@ -43,7 +43,7 @@ Figure 10 Reconstruct using 99% variance
 ![result](/result/att_var099_faces324.png?raw=true)
 
 7.	Recognition
-For an image, we projected it into the eigenspace, and the image was considered as the linear combination of the eigenfaces. The weights of the corresponding eigenfaces therefore represented the image. We only used the top n eigenfaces to represent an image, where the n was determined by how much variance this sub-eigenspace can represent. We investigated 99%, 95%, 90% and 80% percent of variance for both datasets. For AT&T face dataset, the n were 324, 189, 180 and 43, respectively; for Yale face dataset, the n were 297, 62, 22 and 4, respectively.  
+For an image, we projected it into the eigenspace, and the image was considered as the linear combination of the eigenfaces. The weights of the corresponding eigenfaces therefore represented the image. We only used the top n eigenfaces to represent an image, where the n was determined by how much variance this sub-eigenspace can represent. We investigated 99%, 95%, 90% and 80% percent of variance for both datasets the n were 324, 189, 180 and 43, respectively.
 To recognize an unknown face, we used the Knn algorithm to find the close subject in the database. For each image in a dataset, we considered it as a query image and the other images in the dataset as training data. We got the nearest K neighbors and let them vote to determine the label of the query image. Whenever there was a tie, we used the label with the least average distance.  
 If the predict label is the same with the ground label, it is a true positive; otherwise, it is a false positive. We calculated the precision as the performance of the recognition of the result.  
 We also investigated different k in Knn algorithm (k from 1 to 10).
@@ -56,5 +56,4 @@ Figure 15 Precisions for different k neighbors and n percent of variances
 * Turk, Matthew, and Alex Pentland. "Eigenfaces for recognition." Journal of cognitive neuroscience 3.1 (1991): 71-86.
 * Belhumeur, Peter N., Jo?o P. Hespanha, and David J. Kriegman. "Eigenfaces vs. fisherfaces: Recognition using class specific linear projection." IEEE Transactions on pattern analysis and machine intelligence 19.7 (1997): 711-720.
 * http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html
-* http://vision.ucsd.edu/content/extended-yale-face-database-b-b
 * Belhumeur, Peter N., Jo?o P. Hespanha, and David J. Kriegman. "Eigenfaces vs. fisherfaces: Recognition using class specific linear projection." IEEE Transactions on pattern analysis and machine intelligence 19.7 (1997): 711-720.
